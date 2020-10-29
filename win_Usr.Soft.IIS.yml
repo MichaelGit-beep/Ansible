@@ -31,10 +31,19 @@
     win_reboot :
     when : iss_install.reboot_required
 
-  - name : create user
+- name : Add Users
+  hosts : windows
+  tasks :
+  - name : add users
     win_user :
-     name : sysadmin
-     password : 1nisysdMd2D
+     name : '{{ item.name }}'
+     password : '{{ item.password }}'
      groups : administrators
+     update_password : yes
      state : present
+    loop :
+     - name : system1
+       password : AdminitratorPassword10
+     - name : system2
+       password : AdministratoPassword20
 ...
