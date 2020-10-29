@@ -31,10 +31,8 @@
     win_reboot :
     when : iss_install.reboot_required
 
-- name : Add Users
-  hosts : windows
   tasks :
-  - name : add users
+  - name : create user
     win_user :
      name : '{{ item.name }}'
      password : '{{ item.password }}'
