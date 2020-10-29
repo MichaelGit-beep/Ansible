@@ -31,7 +31,6 @@
     win_reboot :
     when : iss_install.reboot_required
 
-  tasks :
   - name : create user
     win_user :
      name : sysadmin
