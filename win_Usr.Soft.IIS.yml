@@ -12,10 +12,6 @@
      - winrar
      - sql-server-management-studio
      state : latest
-----
-- name : install IIS and .net 3.5
-  hosts : windows
-  tasks :
 
   - name : Install IIS
     win_feature :
@@ -34,9 +30,7 @@
   - name : reboot server if required
     win_reboot :
     when : iss_install.reboot_required
----
-- name : create users
-  hosts : windows
+
   tasks :
   - name : create user
     win_user :
