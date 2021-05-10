@@ -24,3 +24,9 @@
      msg: "{{ secre }}"
   - debug:
      msg: "{{ dict1['name'] }}"
+
+
+#### To Create encrypted variable from a string use
+# ansible-vault encrypt_string --vault-password-file vaultpass.file 'varvalue' --name 'varname' 
+# ansible-vault encrypt_string 'varvalue' --name 'varname' 
+# If --vault-password-file is not specified, you will be prompted to insert the password for vault 
